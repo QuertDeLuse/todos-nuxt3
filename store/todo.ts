@@ -1,15 +1,15 @@
 import { defineStore } from 'pinia'
-import { todoItemType } from '@/utils/types'
+import type { TodoItem } from '@/utils/types'
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
-    todos: new Array<todoItemType>()
+    todos: new Array<TodoItem>()
   }),
   getters: {
-    todos: (state) => state.todos,
+    getTodos: (state) => state.todos,
   },
   actions: {
-    addTodo(todo: todoItemType, fromStart: boolean = false): number {
+    addTodo(todo: TodoItem, fromStart: boolean = false): number {
       if (fromStart) {
         return this.todos.unshift(todo)
       }

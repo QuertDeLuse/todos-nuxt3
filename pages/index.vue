@@ -5,11 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import { todoItemType } from "@/utils/types";
+import type { TodoItem } from "@/utils/types";
 import { useTodoStore } from "~/store/todo";
 const todoStore = useTodoStore();
 
-const todos: Array<todoItemType> = [
+const todos: Array<TodoItem> = [
   { id: 1, title: "first" },
   { id: 2, title: "second" },
   { id: 3, title: "third" },

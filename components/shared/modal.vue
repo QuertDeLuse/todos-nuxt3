@@ -8,6 +8,9 @@
       <div class="body">
         <slot name="body" />
       </div>
+      <div class="actions">
+        <slot name="actions" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +30,7 @@ const closeModal = () => {
 <style scoped lang="scss">
 .modal-wrapper {
   position: fixed;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,6 +49,7 @@ const closeModal = () => {
       &:hover {
         background-color: red;
       }
+      cursor: pointer;
     }
 
     .header {
@@ -54,6 +59,15 @@ const closeModal = () => {
       margin-top: 20px;
       font-size: 14px;
     }
+    .actions {
+      margin-top: 20px;
+    }
   }
+}
+</style>
+
+<style>
+.actions div {
+  cursor: pointer;
 }
 </style>

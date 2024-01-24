@@ -1,11 +1,17 @@
 <template>
-  <ul class="todo-list">
-    <li class="todo-list__item" v-for="todo in todos" :key="todo.id">
-      <SharedListItem>
-        {{ todo.title }}
-      </SharedListItem>
-    </li>
-  </ul>
+  <div class="todo-list">
+    <features-add-todo class="todo-list__control" from-start />
+
+    <ul class="">
+      <li class="todo-list__item" v-for="todo in todos" :key="todo.id">
+        <shared-listitem>
+          {{ todo.title }}
+        </shared-listitem>
+      </li>
+    </ul>
+
+    <features-add-todo class="todo-list__control" />
+  </div>
 </template>
 
 <script setup lang="ts">

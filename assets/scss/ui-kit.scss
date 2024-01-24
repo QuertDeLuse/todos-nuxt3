@@ -1,0 +1,9 @@
+@import "@/assets/scss/colors";
+
+.list-item {
+  color: black;
+
+  &_done {
+    text-decoration: line-through;
+  }
+}

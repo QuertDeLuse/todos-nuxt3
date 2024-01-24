@@ -9,6 +9,9 @@ export const useTodoStore = defineStore('todo', {
     getTodos: (state) => state.todos,
   },
   actions: {
+    setAllItems(todos: Array<TodoItem>) {
+      this.todos = todos
+    },
     addTodo(todo: TodoItem, fromStart: boolean = false): number {
       if (fromStart) {
         return this.todos.unshift(todo)

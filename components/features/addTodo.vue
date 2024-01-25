@@ -18,14 +18,22 @@ import { useTodoStore } from "~/store/todo";
 const todoStore = useTodoStore();
 
 const props = defineProps<{
-  fromStart: boolean;
+  fromStart?: boolean;
 }>();
 
 const isShoModal = ref(false);
 
+let theMostBigIndex = todoStore.getTheMostBigIndex;
+
 const addNew = () => {
+  todoStore.getTodos.forEach((item) => {
+    item.id > theMostBigIndex ? (theMostBigIndex = item.id) : theMostBigIndex;
+  });
+  console.log(theMostBigIndex);
+  todoStore.setTheMostBigIndex(theMostBigIndex);
+
   const newItem: TodoItem = {
-    id: todoStore.getTodos.length,
+    id: theMostBigIndex + 1,
     title: "New deal",
   };
 

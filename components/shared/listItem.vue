@@ -19,5 +19,7 @@ const props = defineProps({
 @import "@/assets/scss/ui-kit.scss";
 
 .list-item {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

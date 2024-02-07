@@ -22,7 +22,6 @@ const props = defineProps<{
 }>();
 
 const isShoModal = ref(false);
-
 let theMostBigIndex = todoStore.getTheMostBigIndex;
 
 const addNew = () => {
